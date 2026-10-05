@@ -280,7 +280,7 @@ ln_remover_duplicatas_temporais <- function(dt, col_data, janela_dias = 90L) {  
 #Assim, o linkage passa a ser pessoa X pessoa, e não registro X registro
 #Isso evita que duplicatas e doses inflem artificialmente o número de
 #' pares, permite que a resolução 1:1 faça sentido e recupera campos
-vazios de um registro usando a réplica que estiver preenchida.
+# vazios de um registro usando a réplica que estiver preenchida.
 
 ln_perfil_pessoa <- function(dt) {
   cols <- c("nome_n", "mae_n", "dn", "cns")

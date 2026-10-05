@@ -49,7 +49,7 @@
 #↓
 #identifica as pessoas
 #↓
-organiza as doses
+# organiza as doses
 #↓
 #define período de acompanhamento
 #↓
@@ -141,7 +141,7 @@ dv_unificar <- function(res) {
   p[is.na(dn),   dn   := dn_a]
   p[is.na(sexo), sexo := sexo_a]
   p[is.na(mun),  mun  := mun_a]
-  p[, c("dn_a", "sexo_a", "mun_a") := NULL]Se o SI-PNI não tiver a informação, utiliza a informação do SINAN.
+  p[, c("dn_a", "sexo_a", "mun_a") := NULL]  # Se o SI-PNI não tiver a informação, utiliza a informação do SINAN.
   setkey(p, pid)
   p[]
 }#Unifica os dados pessoais das duas bases, dando prioridade ao SI-PNI e usando o SINAN quando o dado estiver ausente.
@@ -410,9 +410,9 @@ dv_casos <- function(janela, doses, prim_evento, w = 14L) {
 #-----------------------------------------------------------------------
 # 7. Quadro S06.3 — bases individuais
 #-----------------------------------------------------------------------
-Essa função cria o Quadro S06.3 no nível pessoa. Ela junta: identificação;
-grupo do linkage; nascimento; sexo; município; doses; idade na vacinação;
-janela de seguimento; ocorrência dos três desfechos; tempo de seguimento.
+# Essa função cria o Quadro S06.3 no nível pessoa. Ela junta: identificação;
+# grupo do linkage; nascimento; sexo; município; doses; idade na vacinação;
+# janela de seguimento; ocorrência dos três desfechos; tempo de seguimento.
 
 
 dv_base_pessoas <- function(pessoas, doses, janela, eventos, w = 14L) {
